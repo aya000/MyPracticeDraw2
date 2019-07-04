@@ -28,6 +28,10 @@ public class Practice10StrokeJoinView extends View {
         paint.setStrokeWidth(40);
         paint.setStyle(Paint.Style.STROKE);
 
+        /**
+         * rLineTo  基于上一个坐标的偏移
+         * 是相对坐标
+         * */
         path.rLineTo(200, 0);
         path.rLineTo(-160, 120);
     }
@@ -42,14 +46,18 @@ public class Practice10StrokeJoinView extends View {
 
         canvas.translate(100, 100);
         // 第一种形状：MITER
+        paint.setStrokeJoin(Paint.Join.MITER);
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
+        paint.setStrokeJoin(Paint.Join.BEVEL);
         // 第二种形状：BEVEL
+
         canvas.drawPath(path, paint);
 
         canvas.translate(300, 0);
         // 第三种形状：ROUND
+        paint.setStrokeJoin(Paint.Join.ROUND);
         canvas.drawPath(path, paint);
 
         canvas.restore();
