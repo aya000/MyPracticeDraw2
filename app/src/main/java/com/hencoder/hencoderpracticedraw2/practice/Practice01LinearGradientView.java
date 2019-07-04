@@ -3,7 +3,9 @@ package com.hencoder.hencoderpracticedraw2.practice;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -31,6 +33,9 @@ public class Practice01LinearGradientView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        Shader linearShader = new LinearGradient(100, 100, 200, 200, Color.parseColor("#23aa56"), Color.parseColor("#aa4567"), Shader.TileMode.CLAMP);
+        paint.setShader(linearShader);
 
         canvas.drawCircle(300, 300, 200, paint);
     }
