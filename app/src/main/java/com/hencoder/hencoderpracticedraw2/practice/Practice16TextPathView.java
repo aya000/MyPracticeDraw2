@@ -39,7 +39,10 @@ public class Practice16TextPathView extends View {
         super.onDraw(canvas);
 
         canvas.drawText(text, 50, 200, paint);
-
+        /**
+         * 获取text的path，并最终给到textPath上
+         * */
+        paint.getTextPath(text, 0, 14, 50, 400, textPath);
         canvas.drawPath(textPath, pathPaint);
     }
 }
